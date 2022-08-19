@@ -2,6 +2,17 @@ import pyautogui
 import time
 import random
 import sys
+import psutil
+
+for proc in psutil.process_iter():
+    ps_name = proc.name()
+    cmdline = proc.cmdline()
+
+for proc in psutil.process_iter():
+  ps_name = proc.name()
+  if ps_name == 'python3':
+    cmdline = proc.cmdline()
+    print(cmdline)
 
 status = input("if input ""exit"", going shutdown : ")
 
