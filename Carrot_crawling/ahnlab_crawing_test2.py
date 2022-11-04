@@ -9,6 +9,8 @@ response = requests.get(url)
 html = response.text
 soup = BeautifulSoup(html, 'html.parser')
 
+print(soup)
+
 temp = soup.find_all('span', {'class': 'list-bbs-notice-name'})
 
 print(temp)
